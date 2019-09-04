@@ -142,16 +142,9 @@ public class clientdoing {
 				{
 					e.printStackTrace();
 				}
-				
-				
-				
+					
 			}
-			
-			
-			
-			
-			
-			
+				
 		}
 		
 		return result;
