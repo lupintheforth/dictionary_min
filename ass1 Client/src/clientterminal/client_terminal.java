@@ -34,6 +34,13 @@ public class client_terminal {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					if((Integer.parseInt(args[1]) < 9999 && Integer.parseInt(args[1]) >1024) && args[0] != null)
+					{ 
+					ip = args[0];
+					port = Integer.parseInt(args[1]);
+					}
+					
+					
 					client_terminal window = new client_terminal();
 					window.frame.setVisible(true);
 				} catch (Exception e) {

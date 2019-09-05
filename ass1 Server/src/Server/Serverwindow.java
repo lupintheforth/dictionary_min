@@ -20,12 +20,13 @@ import java.awt.event.AdjustmentEvent;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import java.io.*;
+import java.awt.Font;
 
 public class Serverwindow {
 
 	private JFrame frame;
-	private int port = 5001;
-	private String Path = "dictionary.json";
+	private static int port = 5001;
+	private static String Path = "dictionary.json";
 	private MultithreadServer server;
 	private JTextArea actions;
 	private JTextArea log;
@@ -37,8 +38,9 @@ public class Serverwindow {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					//this.port = Integer.parseInt(args[0]);
-					//this.Path = args[1];
+					if((Integer.parseInt(args[0]) > 1024 && Integer.parseInt(args[0]) < 9999) && args[1] != null)
+					port = Integer.parseInt(args[0]);
+					Path = args[1];
 					
 					Serverwindow window = new Serverwindow();
 					window.frame.setVisible(true);
@@ -70,11 +72,13 @@ public class Serverwindow {
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Action performed from the clients");
-		lblNewLabel.setBounds(56, 28, 404, 33);
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 29));
+		lblNewLabel.setBounds(30, 24, 461, 51);
 		frame.getContentPane().add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("User logger");
-		lblNewLabel_1.setBounds(686, 28, 143, 33);
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 37));
+		lblNewLabel_1.setBounds(639, 13, 245, 54);
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		JButton btnNewButton = new JButton("connect");
@@ -142,6 +146,7 @@ public class Serverwindow {
 		frame.getContentPane().add(scrollPane);
 		
 		this.actions = new JTextArea();
+		actions.setFont(new Font("Monospaced", Font.PLAIN, 17));
 		scrollPane.setViewportView(actions);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
@@ -149,6 +154,7 @@ public class Serverwindow {
 		frame.getContentPane().add(scrollPane_1);
 		
 		this.log = new JTextArea();
+		log.setFont(new Font("Monospaced", Font.PLAIN, 17));
 		scrollPane_1.setViewportView(log);
 		
 		
