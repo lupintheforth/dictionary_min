@@ -37,7 +37,6 @@ public class MultithreadServer extends Thread {
 		ServerSocket listeningSocket = null;
 		//Socket clientSocket = null;
 		
-		ArrayList<callingDictThread> threadlist = new ArrayList<callingDictThread>(10);
 		
 		
 		
@@ -64,11 +63,11 @@ public class MultithreadServer extends Thread {
 				
 				
 				// process to allocate the 
+				
 				  
-				  
-				  Thread t = new Thread(new callingDictThread(clientsocket,Path,clientnumber));
+				
+				  callingDictThread t = new callingDictThread(clientsocket,Path,clientnumber);
 				  t.start();
-				  
 				  
 				
 		

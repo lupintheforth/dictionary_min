@@ -39,9 +39,10 @@ public class Serverwindow {
 			public void run() {
 				try {
 					if((Integer.parseInt(args[0]) > 1024 && Integer.parseInt(args[0]) < 9999) && args[1] != null)
+					{
 					port = Integer.parseInt(args[0]);
 					Path = args[1];
-					
+					}
 					Serverwindow window = new Serverwindow();
 					window.frame.setVisible(true);
 					} catch (Exception e) {
