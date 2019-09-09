@@ -87,9 +87,19 @@ public class client_terminal {
 				String word = textField.getText();
 				String meanings = textField_1.getText();
 				
-				clientdoing newrequest = new clientdoing(ip,port);
+				String result = "wrong parameters! type in something in the first area or second";
 				
-				String result = newrequest.sendRequest(1,word,meanings);
+				
+				if (!(word.replaceAll("\\s+",",").equals(",") || word.equals("")))
+					if (!(meanings.replaceAll("\\s+",",").equals(",") || meanings.equals("")))
+					{
+					
+				
+						clientdoing newrequest = new clientdoing(ip,port);
+				
+						result = newrequest.sendRequest(1,word.trim(),meanings.trim());
+					}
+				
 				textField_2.setText(result);
 				
 			}
@@ -111,7 +121,7 @@ public class client_terminal {
 				
 				clientdoing newrequest = new clientdoing(ip,port);
 				
-				String result = newrequest.sendRequest(2,word,meanings);
+				String result = newrequest.sendRequest(2,word.trim(),meanings.trim());
 				textField_2.setText(result);
 				
 			}
@@ -129,7 +139,7 @@ public class client_terminal {
 				
 				clientdoing newrequest = new clientdoing(ip,port);
 				
-				String result = newrequest.sendRequest(3,word,meanings);
+				String result = newrequest.sendRequest(3,word.trim(),meanings.trim());
 				textField_2.setText(result);
 				
 			}

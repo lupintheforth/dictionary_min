@@ -1,0 +1,7 @@
+No.1 tried to add: (eat) (hamburger)
+No.2 tried to search: (eat)
+No.3 tried to remove: (apple)
+No.4 tried to add: (apple) (fruit)
+No.5 tried to add: (apple) (fruit)
+No.6 tried to search: (apple)
+No.7 tried to add: (apple) (fruit)

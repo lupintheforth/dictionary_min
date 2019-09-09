@@ -104,8 +104,8 @@ public class Serverwindow {
 				
 					BufferedReader ReaderforActions = new BufferedReader( new FileReader("RequestActions.txt"));
 					BufferedReader Readerforlog = new BufferedReader( new FileReader("systemlogger.txt"));
-					actions.setText(null);
-					log.setText(null);
+					actions.setText("if the number is confusing, you have to reset the record file!(delete)"+"\n\n");
+					log.setText("if the number is confusing, you have to reset the record file!(delete)"+"\n\n");
 					while((buffer1 = ReaderforActions.readLine())!= null) 
 					{	
 						actions.append(buffer1+"\n");
